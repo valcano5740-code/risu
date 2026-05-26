@@ -1,0 +1,29 @@
+﻿diff --git a/app/src/main/kotlin/co/aiclient/risu/server/LocalWebServer.kt b/app/src/main/kotlin/co/aiclient/risu/server/LocalWebServer.kt
+index 079afdc..834eb4a 100644
+--- a/app/src/main/kotlin/co/aiclient/risu/server/LocalWebServer.kt
++++ b/app/src/main/kotlin/co/aiclient/risu/server/LocalWebServer.kt
+@@ -64,12 +64,23 @@ class LocalWebServer(
+             val inputStream = assetManager.open(path)
+             val mimeType = getMimeType(path)
+             
+-            // CORS ?ㅻ뜑 異붽?
++            // CORS ?ㅻ뜑 諛?罹먯떛 ?ㅼ젙
++            // HTML? ??긽 泥댄겕, ?뺤쟻 ?뚯씪? 24?쒓컙 罹먯떆?섏뿬 濡쒕뵫 ?띾룄 ?μ긽
++            val cacheControl = when {
++                mimeType.startsWith("text/html") -> "no-cache"
++                mimeType.contains("javascript") -> "public, max-age=86400"
++                mimeType.startsWith("text/css") -> "public, max-age=86400"
++                mimeType.startsWith("image/") -> "public, max-age=86400"
++                mimeType.startsWith("font/") -> "public, max-age=604800"  // ?고듃??7??+                mimeType.contains("wasm") -> "public, max-age=86400"
++                else -> "no-cache"
++            }
++            
+             newChunkedResponse(Response.Status.OK, mimeType, inputStream).apply {
+                 addHeader("Access-Control-Allow-Origin", "*")
+                 addHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+                 addHeader("Access-Control-Allow-Headers", "*")
+-                addHeader("Cache-Control", "no-cache")
++                addHeader("Cache-Control", cacheControl)
+             }
+         } catch (e: Exception) {
+             Log.w(TAG, "File not found: $path")

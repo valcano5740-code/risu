@@ -1,0 +1,149 @@
+--- 
++++ 
+@@ -470,36 +470,36 @@
+       tab_vector_open: "벡터 검색",
+       tab_cache_open: "캐시 저장소",
+       tab_common: "공통 프롬프트",
+-      tab_preset1_old: "설정 1 (추출)",
+-      tab_preset2_old: "설정 2 (추출)",
+-      tab_preset1_new: "설정 1 (추출+디렉터)",
+-      tab_preset2_new: "설정 2 (추출+디렉터)",
+-      tab_char_extract: "캐릭터 페르소나 추출",
++      tab_preset1_old: "프리셋 1 (대화 요약)",
++      tab_preset2_old: "프리셋 2 (대화 요약)",
++      tab_preset1_new: "프리셋 1 (대화 요약 + 디렉터)",
++      tab_preset2_new: "프리셋 2 (대화 요약 + 디렉터)",
++      tab_char_extract: "캐릭터 설정 추출",
+       tab_preset3: "설정 3",
+       tab_preset4: "설정 4",
+-      sec_a: "메인 모델",
+-      sec_b: "보조 모델",
+-      sec_embed_title: "임베딩 모델",
++      sec_a: "메인 모델 (요약/추출)",
++      sec_b: "보조 모델 (분석/보조)",
++      sec_embed_title: "임베딩 모델 (벡터화)",
+       embed_warn:
+-        "⚠️ 서로 다른 임베딩 모델의 벡터는 호환되지 않습니다. 모델 변경 시 인덱스를 새로 구축해야 합니다.",
++        "⚠️ 주의: 임베딩 모델을 변경하면 기존 벡터 데이터와 호환되지 않아 인덱스를 새로 구축해야 합니다.",
+       lbl_provider: "제공자",
+       lbl_format: "요청 형식",
+       lbl_url: "요청 URL",
+       lbl_key: "API 키",
+       lbl_model: "모델",
+       lbl_temp: "온도",
+-      lbl_concur: "요청 모드 (Concurrency)",
+-      opt_concurrent: "병렬 (복수 요청 동시 발송)",
+-      opt_sequential: "순차 (단일 요청만 처리)",
++      lbl_concur: "요청 처리 방식",
++      opt_concurrent: "병렬 처리 (빠르지만 부하 증가)",
++      opt_sequential: "순차 처리 (가장 안정적)",
+       sec_lore_calls: "로어북 쓰기 설정",
+       tag_temp_closed: "닫힘",
+       warn_kb_feature_enable:
+-        "⚠️ 「봇 재구성」 모드에서는 CBS 구문 분석이 지원되지 않습니다. 사용이 필요한 경우 수동으로 조정해주세요. 설정 가이드를 확인한 뒤 활성화하시기 바랍니다.",
+-      opt_vec_card_reorg: "봇 재구성만 사용",
+-      opt_vec_preset1: "설정 1 (봇 재구성 + 벡터 검색)",
+-      opt_vec_preset2: "설정 2 (봇 재구성 + 벡터 검색)",
++        "⚠️ 주의: 「캐릭터 지식 분석」 모드를 켜면 기본 캐릭터 프롬프트 구조가 변경되어 기존 CBS 구문이 고장날 수 있습니다. 설정 가이드를 먼저 확인하고 필요시 캐릭터 프롬프트를 수동 조정해주세요.",
++      opt_vec_card_reorg: "캐릭터 지식 분석만 사용",
++      opt_vec_preset1: "프리셋 1 (캐릭터 지식 분석 + 벡터 검색)",
++      opt_vec_preset2: "프리셋 2 (캐릭터 지식 분석 + 벡터 검색)",
+       lore_warn:
+-        "⚠️ 실행 중에는 로어북을 수동으로 편집하지 마세요. 자동으로 덮어쓰일 수 있습니다.",
++        "⚠️ 주의: 에이전트가 실행되는 도중에는 로어북을 직접 수정하지 마세요. 에이전트가 내용을 덮어버릴 수 있습니다.",
+       btn_add_call: "호출 작업 추가",
+       lbl_anchor: "시스템 앵커 프롬프트",
+       lbl_prefill: "어시스턴트 프리필",
+@@ -516,20 +516,20 @@
+       lbl_classify_anchor: "분류 앵커 프롬프트",
+       lbl_classify_model: "분류 모델",
+       lbl_enable_mod_lorebook: "모드 로어북을 벡터 검색 범위에 포함",
+-      sec_card_settings: "봇 활성화 설정",
+-      lbl_card_name: "봇",
+-      lbl_memory_extract: "정보 추출 활성화",
+-      lbl_vector_search_card: "봇에 벡터 검색 적용",
+-      lbl_card_disabled: "이 플러그인 사용 안 함",
++      sec_card_settings: "캐릭터별 플러그인 적용 설정",
++      lbl_card_name: "캐릭터",
++      lbl_memory_extract: "플러그인 활성화 및 디렉터 모드 설정",
++      lbl_vector_search_card: "벡터 검색 및 캐릭터 지식 분석 모드 설정",
++      lbl_card_disabled: "이 캐릭터에선 플러그인 완전히 끄기",
+       btn_continue_chat: "채팅 이어가기",
+       dlg_continue_chat_title: "이어갈 채팅 선택",
+-      dlg_continue_chat_empty: "이 캐릭터에는 아직 채팅이 없습니다.",
++      dlg_continue_chat_empty: "이 캐릭터에는 아직 채팅 대화 기록이 없습니다.",
+       dlg_continue_chat_turns: "턴",
+-      dlg_continue_chat_current: "현재",
+-      opt_off: "끄기",
+-      opt_preset1: "설정 1",
+-      opt_preset2: "설정 2",
+-      no_cards: "데이터베이스에 봇이 없습니다.",
++      dlg_continue_chat_current: "현재 상태",
++      opt_off: "사용 안 함 (끄기)",
++      opt_preset1: "프리셋 1",
++      opt_preset2: "프리셋 2",
++      no_cards: "저장된 캐릭터 카드가 없습니다.",
+       sec_cache: "캐시 저장소",
+       btn_refresh_cache: "캐시 목록 새로고침",
+       btn_clear_cache: "전체 캐시 삭제",
+@@ -578,24 +578,24 @@
+       model_suggest_title: "🖥️ 권장 모델",
+       model_suggest_s1: `<b>설정 1: 단일 캐릭터 또는 가벼운 모험용 봇</b><br/>• 메인 모델: 대량의 정보를 요약하기에 적합 (Gemini 3 Flash)<br/>• 보조 모델: 가벼운 처리에 적합 (Gemini 3.1 Flash Lite)<br/>• 임베딩 모델: 다국어 벡터 검색용 (gemini-embedding-2-preview)`,
+       model_suggest_s2: `<b>설정 1 또는 2: 복잡하거나 다중 캐릭터형 봇</b><br/>• 메인 모델: 깊이 있는 분석에 적합 (Gemini 3.1 Pro, Claude 4.6 Sonnet)<br/>• 보조 모델: 중량급 처리에 적합 (Gemini 3 Flash)<br/>• 임베딩 모델: 다국어 벡터 검색용 (gemini-embedding-2-preview)`,
+-      mode_guide_title: "📖 모드 및 호출 빈도 안내",
++      mode_guide_title: "📖 모드 및 모델 동작 가이드",
+       mode_guide_content: `<div style="border-top: 1px solid rgba(255, 152, 0, 0.1); padding-top: 12px;">
+                     <!-- 🎯 모드 선택 (Indigo) -->
+                     <div style="border-left: 4px solid var(--pse-accent-indigo); background: rgba(63, 81, 181, 0.05); padding: 8px 12px; border-radius: 8px; margin-bottom: 16px;">
+-                      <b style="color: var(--pse-accent-indigo); font-size: 14px;">🎯 모드 선택</b>
++                      <b style="color: var(--pse-accent-indigo); font-size: 14px;">🎯 프리셋 특징</b>
+                       <div style="margin-top: 6px; display: grid; gap: 4px; margin-bottom: 8px;">
+-                        <div>• <b>설정 차이:</b> 「설정 1」은 일반 봇용이며, 「설정 2」는 복잡한 시나리오용입니다.</div>
+-                        <div>• <b>추출:</b> 대화 내용을 압축하여 기존의 긴 기록을 대체하고 토큰을 절약합니다.</div>
++                        <div>• <b>프리셋 차이:</b> 「프리셋 1」은 일반 캐릭터용, 「프리셋 2」는 세계관이 복잡한 다중 시나리오용입니다.</div>
++                        <div>• <b>대화 요약:</b> 길어지는 대화 내용을 효율적으로 압축하여 토큰을 절약하고 기억을 오래 유지시킵니다.</div>
+                       </div>
+ 
+                       <div style="background:rgba(63, 81, 181, 0.1); border:1px solid rgba(63, 81, 181, 0.2); padding:8px; border-radius:6px;">
+                         <div style="color:var(--pse-accent-indigo); font-weight:bold; font-size:12px; margin-bottom:4px; border-bottom:1px solid rgba(63, 81, 181, 0.1);">🧩 기능 설명</div>
+                         <div style="font-size:12px; color:var(--pse-text); display:grid; gap:4px;">
+-                          <div>• <b>디렉터:</b> 시나리오의 흐름과 캐릭터 반응을 가이드하여 깊이 있는 경험을 제공합니다.</div>
+-                          <div style="color: var(--pse-accent-red); font-size: 11px;">⚠️ 캐릭터 연기가 현실에 더 가까워지며, 생각과 성격을 바꾸기가 더 어려워집니다.</div>
+-                          <div style="color: var(--pse-accent-red); font-size: 11px;">⚠️ 프롬프트를 크게 조정해야 하며, 어느 정도의 프롬프트 수정 기초가 필요합니다.</div>
+-                          <div>• <b>봇 재구성:</b> 봇 데이터를 분석하여 프롬프트 내 가장 효율적인 위치로 재배치합니다.</div>
+-                          <div>• <b>벡터 검색:</b> 키워드 매칭 대신 의미 기반 검색을 통해 관련 정보의 밀도를 비약적으로 높입니다.</div>
++                          <div>• <b>디렉터:</b> 시나리오의 흐름과 캐릭터의 반응 방향성을 지시하여 훨씬 더 입체적이고 개성있는 역할극 경험을 줍니다.</div>
++                          <div style="color: var(--pse-accent-red); font-size: 11px;">⚠️ 디렉터 개입 시 캐릭터의 연기가 사실적으로 변하므로, 사용자가 억지로 성격을 바꾸기 힘들어질 수 있습니다.</div>
++                          <div style="color: var(--pse-accent-red); font-size: 11px;">⚠️ 캐릭터 봇의 프롬프트를 상당히 무시하고 재해석할 수 있으니 주의하세요.</div>
++                          <div>• <b>캐릭터 지식 분석:</b> 캐릭터의 방대한 정보 데이터를 분석하여 AI가 가장 잘 이해할 수 있는 구조로 즉석에서 재조립합니다.</div>
++                          <div>• <b>벡터 검색:</b> 단순 단어 매칭 수준을 넘어 문맥의 의미를 파악하는 고차원 검색 기술로, 대화에 딱 맞는 지식만 영리하게 불러옵니다.</div>
+                         </div>
+                       </div>
+                     </div>
+@@ -13768,7 +13768,7 @@
+             );
+             const cname = safeTrim(c?.name || `Card ${idx + 1}`);
+             const cid = rawId || `name_${simpleHash(cname)}`;
+-            const cs = cardSettings[cid] || {};
++            const cs = cardSettings[cid] || { card_disabled: 0, memory_extract: "4", vector_search_card: "2" };
+             const isEven = idx % 2 === 0;
+             const borderColor = isEven
+               ? "var(--pse-accent-blue)"
+@@ -16087,7 +16087,7 @@
+           const displayCharId =
+             displayRawCharId ||
+             (displayCharName ? `name_${simpleHash(displayCharName)}` : "-1");
+-          const displayCardCfg = displayCardSettings[displayCharId] || {};
++          const displayCardCfg = displayCardSettings[displayCharId] || { card_disabled: 0, memory_extract: "4", vector_search_card: "2" };
+           const displayCardDisabled = !(
+             displayCardCfg.card_disabled === 0 ||
+             displayCardCfg.card_disabled === false ||
+@@ -16169,7 +16169,7 @@
+       const charName = safeTrim(char?.name || "");
+       const charId =
+         rawCharId || (charName ? `name_${simpleHash(charName)}` : "-1");
+-      const cardCfg = cardSettings[charId] || {};
++      const cardCfg = cardSettings[charId] || { card_disabled: 0, memory_extract: "4", vector_search_card: "2" };
+       const cardIsDisabled = !(
+         cardCfg.card_disabled === 0 ||
+         cardCfg.card_disabled === false ||

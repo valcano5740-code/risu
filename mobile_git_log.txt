@@ -1,0 +1,25 @@
+ad864b3 fix: revert applicationId to co.aiclient.risu.native
+a021c10 fix: change applicationId to co.aiclient.risu for compatibility
+f96b6cd feat: add automatic APK signing configuration
+b4105e6 fix: restore APK size to 22MB by fixing build configuration
+02505fb Merge branch 'master' of https://lab.ssafy.com/time5454/risu
+origin	https://lab.ssafy.com/time5454/risu.git (fetch)
+origin	https://lab.ssafy.com/time5454/risu.git (push)
+---BRANCH---
+* master
+  remotes/origin/master
+---STATUS---
+ M app/src/main/kotlin/co/aiclient/risu/MainActivity.kt
+ M app/src/main/kotlin/co/aiclient/risu/server/LocalWebServer.kt
+?? app/src/main/assets/assets/korean_font.woff2
+?? app/src/main/assets/assets/lex.50.50.encs.spm
+?? app/src/main/assets/assets/model.intgemm.alphas.bin
+?? app/src/main/assets/assets/pretendard.woff2
+?? app/src/main/assets/assets/vocab.deen.spm
+?? build_output.log
+?? scripts/sync_assets_and_patch.ps1
+?? scripts/sync_log.txt
+---DIFF_STAT---
+ .../main/kotlin/co/aiclient/risu/MainActivity.kt   | 28 ++++------------------
+ .../co/aiclient/risu/server/LocalWebServer.kt      | 18 +++++++++++---
+ 2 files changed, 20 insertions(+), 26 deletions(-)

@@ -1,0 +1,20 @@
+[
+  "349: <div style=\"margin-bottom: 4px;\">\u2022 <b>Enable Settings:</b> Configure individual bot plugin modes. On",
+  "366: \u2022 Default preset prompts must be modified.<br>",
+  "5652: embeddingPreset.defaultModel ||",
+  "5657: : embeddingPreset.defaultModel || embeddingOptions[0] || \"custom\";",
+  "7466: : configCache.embedding_format || preset.format || \"openai\",",
+  "8554: const preset = toInt(configCache.active_preset, 1);",
+  "11012: (configCache.vector_search_enabled === 1 || isNewPresetEnabled())",
+  "13258: <button id=\"pse-preset-1\" class=\"pse-preset-btn ${toInt(configCache.active_preset, 1) === 1 ? \"activ",
+  "13259: <button id=\"pse-preset-2\" class=\"pse-preset-btn ${toInt(configCache.active_preset, 1) === 2 ? \"activ",
+  "13803: const getPresetTagConfig = (m, v) => {",
+  "13820: const tagConfig = getPresetTagConfig(memExtract, vecSearch);",
+  "13827: <span class=\"pse-card-preset-tag\" style=\"padding:2px 8px;border-radius:10px;font-size:10px;font-weig",
+  "14388: let uiActivePreset = toInt(configCache.active_preset, 1);",
+  "15404: card_enable_settings: DEFAULTS.card_enable_settings,",
+  "15867: preset.defaultModel || optionValues[0] || \"custom\",",
+  "16225: vector_search_query_dialogue_rounds: vectorPresetNum === 2 ? toInt(configCache.vector_search_query_d",
+  "16226: vector_search_top_k: vectorPresetNum === 2 ? toInt(configCache.vector_search_top_k_2, DEFAULTS.vecto",
+  "16227: vector_search_min_score: vectorPresetNum === 2 ? Number(configCache.vector_search_min_score_2) || DE"
+]

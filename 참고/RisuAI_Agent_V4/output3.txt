@@ -1,0 +1,90 @@
+13731: await clearAllEmbeddingCache();
+13732: await renderEmbeddingCacheList();
+13733: });
+13734: 
+13735: const renderCardEnableList = async () => {
+13736: const wrap = document.getElementById("pse-card-enable-list");
+13737: if (!wrap) return;
+13738: let cardSettings = {};
+13739: try {
+13740: cardSettings =
+13741: JSON.parse(configCache.card_enable_settings || "{}") || {};
+13742: } catch { }
+13743: try {
+13744: const db = await Risuai.getDatabase();
+13745: const characters = Array.isArray(db?.characters) ? db.characters : [];
+13746: if (characters.length === 0) {
+13747: wrap.innerHTML = `<div class="pse-assembly" style="color:var(--pse-muted);font-size:12px;">${_T.no_cards}</div>`;
+13748: return;
+13749: }
+13750: const makeMemoryOpts = (selected) =>
+13751: [
+13752: `<option value="1" ${selected === "1" ? "selected" : ""}>${_T.tab_preset1_old || _T.opt_preset1}</option>`,
+13753: `<option value="2" ${selected === "2" ? "selected" : ""}>${_T.tab_preset2_old || _T.opt_preset2}</option>`,
+13754: `<option value="3" ${selected === "3" ? "selected" : ""}>${_T.tab_preset1_new || "Setting 1 (New)"}</option>`,
+13755: `<option value="4" ${selected === "4" ? "selected" : ""}>${_T.tab_preset2_new || "Setting 2 (New)"}</option>`,
+13756: ].join("");
+13757: const makeVectorOpts = (selected) =>
+13758: [
+13759: `<option value="card_reorg" ${selected === "card_reorg" ? "selected" : ""}>${_T.opt_vec_card_reorg || "Card Reorg"}</option>`,
+13760: `<option value="1"    ${selected === "1" ? "selected" : ""}>${_T.opt_vec_preset1 || _T.opt_preset1}</option>`,
+16071: ? displayChat.message
+16072: : [];
+16073: const displayUserMsgCount =
+16074: countUserMessages(displayMsgs) +
+16075: getTurnOffsetFromLocalLore(displayChat?.localLore);
+16076: let displayCardCalls;
+16077: try {
+16078: let displayCardSettings = {};
+16079: try {
+16080: displayCardSettings =
+16081: JSON.parse(configCache.card_enable_settings || "{}") || {};
+16082: } catch { }
+16083: const displayRawCharId = String(
+16084: displayChar?.chaId || displayChar?.id || displayChar?._id || "",
+16085: ).replace(/[^0-9a-zA-Z_-]/g, "");
+16086: const displayCharName = safeTrim(displayChar?.name || "");
+16087: const displayCharId =
+16088: displayRawCharId ||
+16089: (displayCharName ? `name_${simpleHash(displayCharName)}` : "-1");
+16090: const displayCardCfg = displayCardSettings[displayCharId] || {};
+16091: const displayCardDisabled = !(
+16092: displayCardCfg.card_disabled === 0 ||
+16093: displayCardCfg.card_disabled === false ||
+16094: displayCardCfg.card_disabled === "0"
+16095: );
+16096: if (!displayCardDisabled) {
+16097: const displayMemoryPreset = ["1", "2", "3", "4"].includes(
+16098: String(displayCardCfg.memory_extract),
+16099: )
+16100: ? String(displayCardCfg.memory_extract)
+16154: const firstMessageHandledKey = getFirstMessageHandledKey(
+16155: requestKeys.scopeId,
+16156: chat,
+16157: chatIndex,
+16158: );
+16159: const firstMessageMarker = simpleHash(String(lastUserContent || ""));
+16160: 
+16161: let cardSettings = {};
+16162: try {
+16163: cardSettings =
+16164: JSON.parse(configCache.card_enable_settings || "{}") || {};
+16165: } catch { }
+16166: const rawCharId = String(
+16167: char?.chaId || char?.id || char?._id || "",
+16168: ).replace(/[^0-9a-zA-Z_-]/g, "");
+16169: const charName = safeTrim(char?.name || "");
+16170: const charId =
+16171: rawCharId || (charName ? `name_${simpleHash(charName)}` : "-1");
+16172: const cardCfg = cardSettings[charId] || {};
+16173: const cardIsDisabled = !(
+16174: cardCfg.card_disabled === 0 ||
+16175: cardCfg.card_disabled === false ||
+16176: cardCfg.card_disabled === "0"
+16177: );
+16178: if (cardIsDisabled) {
+16179: await Risuai.safeLocalStorage.setItem(
+16180: requestKeys.lastExtractorMode,
+16181: "card_disabled",
+16182: );
+16183: try { if (ProgressPanel.visible) await ProgressPanel.hide(); } catch (_ppErr) { }

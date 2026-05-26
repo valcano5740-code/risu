@@ -1,0 +1,2 @@
+13771: const cs = cardSettings[cid] || {};
+16172: const cardCfg = cardSettings[charId] || {};

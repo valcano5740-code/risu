@@ -1,0 +1,109 @@
+﻿diff --git a/app/src/main/kotlin/co/aiclient/risu/MainActivity.kt b/app/src/main/kotlin/co/aiclient/risu/MainActivity.kt
+index 59abfc5..5aeb595 100644
+--- a/app/src/main/kotlin/co/aiclient/risu/MainActivity.kt
++++ b/app/src/main/kotlin/co/aiclient/risu/MainActivity.kt
+@@ -433,36 +433,22 @@ class MainActivity : ComponentActivity() {
+         // ?ㅼ슫濡쒕뱶 由ъ뒪??         webView.setDownloadListener { url, userAgent, contentDisposition, mimetype, contentLength ->
+             try {
+-                // blob: URL 泥섎━ - Base64濡?蹂?????ㅼ씠?곕툕?먯꽌 ???+                // blob: URL 泥섎━
+                 if (url.startsWith("blob:")) {
+-                    // ?뚯씪紐?異붿텧
+-                    val filename = URLUtil.guessFileName(url, contentDisposition, mimetype)
+-                        .replace("blob_", "risuai_backup_")
+-                        .let { if (it.isBlank() || it == "download") "risuai_backup_${System.currentTimeMillis()}.json" else it }
+-                    
+-                    android.util.Log.d("RisuAI", "Blob download - filename: $filename, mimetype: $mimetype")
+-                    
+-                    // JavaScript濡?blob??Base64濡?蹂?섑븯?????                     webView.evaluateJavascript(
+                         """
+-                        (async function() {
+-                            try {
+-                                const response = await fetch('$url');
+-                                const blob = await response.blob();
+-                                const reader = new FileReader();
++                        (function() {
++                            var xhr = new XMLHttpRequest();
++                            xhr.open('GET', '$url', true);
++                            xhr.responseType = 'blob';
++                            xhr.onload = function() {
++                                var reader = new FileReader();
+                                 reader.onloadend = function() {
+-                                    const base64 = reader.result.split(',')[1] || reader.result;
+-                                    // ?ㅼ씠?곕툕濡??곗씠???꾩넚
+-                                    if (window.RisuNative && window.RisuNative.saveDownloadFile) {
+-                                        window.RisuNative.saveDownloadFile('$filename', base64, '$mimetype');
+-                                    } else {
+-                                        console.error('[Blob Download] RisuNative.saveDownloadFile not available');
+-                                    }
++                                    console.log('Blob download ready');
+                                 };
+-                                reader.readAsDataURL(blob);
+-                            } catch(e) {
+-                                console.error('[Blob Download] Error:', e);
+-                            }
++                                reader.readAsDataURL(xhr.response);
++                            };
++                            xhr.send();
+                         })();
+                         """.trimIndent(),
+                         null
+@@ -491,6 +477,63 @@ class MainActivity : ComponentActivity() {
+         }
+     }
+     
++    /**
++     * 諛깃렇?쇱슫???꾪솚 ??WebView ?쇱떆?뺤?
++     * - CPU/諛고꽣由??뚮え 諛⑹?
++     * - JavaScript ??대㉧ ?뺤?
++     */
++    override fun onPause() {
++        super.onPause()
++        webView.onPause()
++        webView.pauseTimers()
++        android.util.Log.d("RisuAI", "Activity paused - WebView paused")
++    }
++    
++    /**
++     * ?ш렇?쇱슫??蹂듦? ??WebView ?ш컻
++     * - 利됱떆 諛섏쓳?섎룄濡??뚮뜑留???대㉧ ?ш컻
++     * - 濡쒖뺄 ?쒕쾭 ?곹깭 ?뺤씤 諛??꾩슂???ъ떆??+     */
++    override fun onResume() {
++        super.onResume()
++        webView.onResume()
++        webView.resumeTimers()
++        
++        // 濡쒖뺄 ?쒕쾭 ?곹깭 ?뺤씤 諛??ъ떆??+        ensureServerRunning()
++        
++        android.util.Log.d("RisuAI", "Activity resumed - WebView resumed")
++    }
++    
++    /**
++     * Activity ?뚭눼 ??WebView ?곹깭 ???+     * - ?쒖뒪?쒖뿉 ?섑븳 媛뺤젣 醫낅즺 ???곹깭 ?좎?
++     */
++    override fun onSaveInstanceState(outState: Bundle) {
++        super.onSaveInstanceState(outState)
++        webView.saveState(outState)
++        android.util.Log.d("RisuAI", "Saved WebView state")
++    }
++    
++    /**
++     * Activity 蹂듭썝 ??WebView ?곹깭 蹂듭썝
++     */
++    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
++        super.onRestoreInstanceState(savedInstanceState)
++        webView.restoreState(savedInstanceState)
++        android.util.Log.d("RisuAI", "Restored WebView state")
++    }
++    
++    /**
++     * 濡쒖뺄 ?쒕쾭 ?ㅽ뻾 ?곹깭 ?뺤씤 諛??ъ떆??+     */
++    private fun ensureServerRunning() {
++        if (localServer == null || !localServer!!.isAlive) {
++            android.util.Log.w("RisuAI", "Server not running, restarting...")
++            startLocalServer()
++        }
++    }
++    
+     override fun onDestroy() {
+         localServer?.stop()
+         webView.destroy()

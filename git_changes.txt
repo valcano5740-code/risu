@@ -1,0 +1,229 @@
+6b7958a8 chore: bump version to 2026.2.110
+0a5f2e30 refactor: Move convertImage/checkImageType out of parser (#1250)
+18fecb54 feat: hide jailbreak toggle when no jailbreak prompt exists (#1129)
+b3b2f365 feat: add WaveSpeedAI integration for image generation (#1225)
+583bb1d2 feat: Corrupted Module Lorebook Reset option (#1252)
+e160e722 Merge branch 'main' into fixBackupLoadError-updateLorebooks
+1480cefb feat: Partial Edit (Block/Drag) (ref: @noelkim12) (#1253)
+64cb5d2d Merge branch 'main' into easyEdit
+30f66f19 fix: make typecheck pass (#1254)
+efda14c5 feat: add aws opus 4.5 and 4.6 (#1258)
+6878ad67 test: Inlay functions (#1256)
+69269239 feat: add update reminder feature with postpone options (#1257)
+1bb09820 feat: Improve OpenRouter experience (#1240)
+96ae4def feat: Move aux models setting to models setting page (#1232)
+285da8ec feat: add translations via gemini
+9f70e9d1 ref: change language keys on inlay to strings to be consistant
+56c9edd8 feat: add aws opus 4.5, 4.6
+92612a67 docs: clean up partial edit comments
+ee33b3f8 feat: add update reminder feature with postpone options
+f4ad70a3 test: Inlay functions
+b822f1e1 Indent with 4 spaces
+1c344766 refactor: Move convertImage/checkImageType out of parser
+7f6fd192 feat: Improve OpenRouter experience
+6cec35db Merge branch 'main' into feat/move-axmodels-to-model-settings
+bf71eda9 Merge branch 'main' into easyEdit
+7796790e Merge branch 'main' into fixBackupLoadError-updateLorebooks
+0bf87154 Merge branch 'main' into fixBackupLoadError-updateLorebooks
+0f08035a chore: update version to 2026.2.63 in configuration and related files
+a90f132b feat: make remote saving as an option until its safety is proven
+369f435c fix: update condition to check for account synchronization in UserSettings
+1aad3c9b chore: update version to 2026.2.62 in configuration and related files
+8d1d88f5 feat: add checkedRemoteExistence set to track remote file existence
+183e0a85 fix: remote blocks
+a0544f4c chore: update version to 2026.2.61 in configuration and related files
+0cf61494 feat: add disableRemoteSaving flag to control remote saving behavior
+781d240f feat: add okay to delete check
+e96f71c1 Merge branch 'kwaroran:main' into fix/pr1219-typecheck-upstream
+8ea0a057 fix: make typecheck pass
+a1daac53 feat: add recommended flag to Claude tokenizer configuration
+19d93b8f chore: update version to 2026.2.60 in configuration files
+4366ac79 Merge branch 'main' of https://github.com/kwaroran/Risuai
+acf6a6a7 feat: add Claude 4.6 model to AnthropicModels
+8e84567f fix: extract hardcoded string from bootstrap
+e2db0a47 test: #each, nested #each, nested #when (#1244)
+cadae8c2 l10n: Languages for inlay assets explorer (#1251)
+6fe4d3d6 fix: auto scroll to edit buttons
+3cb286d0 optimize: apply exist IntersectionObserver to drag edit
+633c7ea2 fix: hide block buttons while text is selected
+4a9f4a50 fix: lang typo partialEdit
+c57e7cc2 Merge remote-tracking branch 'upstream/main' into easyEdit
+50626825 fix: correction select logic DragPartialEdit
+6eaff6e3 fix: seperate findAllOriginalRangesFrom Html/Text
+c4775ce1 fix: add selection based DragPartialEdit feature
+315f75ad fix: add span, div partialEdit block selector
+e7a137b1 fix: remove select in proceedWithEdit
+91d0f60b style: width 50vw partial edit modal
+318daa69 fix: remove unused codes
+b3971408 optimize: partial edit with IntersectionObserver
+c544dc5c fix: exclude empty line in extractContext
+001b64e3 fix: add match info for delete modal
+9ccf8081 fix: correction delete preview message
+1e843761 fix: unify edit delete MatchSelectionModal
+3082ef1b fix: overlap check to findAllOriginalRangesFromHtml
+96927b12 ref: change indent of hypav3.ts  to 4
+c004fb9c fix: remove unimplemented sanitizeSummaryContent function due to pr review mistake
+52445e4b Merge branch 'main' of https://github.com/kwaroran/Risuai
+174eee49 fix: update deprecation warning for Node server in README
+e3b52fb4 style: add white-space to match list modal
+60740066 style: unify all modal text colors
+84338a69 refactor: multiple partialEdit results with confidence
+8cea8508 refactor: improve text matching accuracy in partialEdit with bigram similarity and confidence score
+4a5c53ff fix: expand foundRange when fuzzy
+a2bf5f20 fix: remove partial edit searchStartOffset logic
+396ab94f fix: partial edit block not found popup
+a657be8a style: increase partial edit modal width
+79af4e4b add: language namespace partialEdit
+030415e7 add: partial edit searchStartOffset logic
+d6a2d491 fix: partial edit cbs ruby handle
+585e1f7e chore: remove unused partial edit functions
+1ebd6a61 fix: Partial Edit button hover method
+ab1f5628 fix: hide edit button on scroll
+e7f59a71 change: partial edit korean word
+c235c6ed add: Partial Edit accessibility option
+8dcec13a fix: json stringify in report lorebook bug
+00e152ee add: lorebook reset english text
+c9fe6b9a l10n: Languages for inlay assets explorer
+f0c54ffd add: reset option when lorebook corrupted
+d3cac044 Merge commit '0b9e91ea846a600d0c09de65750273ac056487fb' into feat/move-axmodels-to-model-settings
+f8ffa151 test: Parser partially fixed, run #each ... #when
+58d8f83b test: #each, nested #each, nested #when, nested each-when
+a751d48a fix: Hyper Memory V3 'ot' & 'startsWith' error Bug Resolve (#1219)
+0b9e91ea feat: add default value support to alertInput and related components (#1211)
+dfb8012d fix: Exclude account information from local backups (#1210)
+0f367052 chore: Remove dead settings (#1237)
+3ba1515d fix: cbs {{#when}} ... {{:else}} ... {{/when}} works in another pure block (#1247)
+074802eb fix: update OAuth scope to simplify permissions
+d3deae8e fix: update OAuth scope to remove unnecessary permissions
+44a0e79e fix: update OAuth discovery URL to the correct identity provider
+97e93fac fix: rename readFileUnSecure to readFileInsecure for clarity
+b8076cae Merge branch 'main' of https://github.com/kwaroran/Risuai
+19c9a3d6 feat: add 'declare' function to CBS register
+e1abc459 Merge branch 'kwaroran:main' into fix/cbs-when-else
+98f38ad6 fix: prevent unnecessary nesting in risuChatParser for ':else' cases
+b9a5ef66 chore: Remove unused visual novel mode (#1235)
+be7afea7 feat: add support for ROOT_COMPONENT in RisuSaveDecoder
+77a7053c feat: add support for CHARACTER_WITHOUT_CHAT in RisuSaveDecoder
+0551998d Merge branch 'main' of https://github.com/kwaroran/Risuai
+6d0c912a feat: add new RisuSaveType enum values for CHARACTER_WITHOUT_CHAT and ROOT_COMPONENT
+3a56d79d fix: guard model lookup and seed generation info
+23a157f1 fix: prevent generationInfo TDZ and sanitize hypa summaries
+0002e865 feat: Add postcss-selector-parser dependency and integrate it for class name modification
+e25c2ca0 feat: Enhance readImage to support assets/ prefix
+2e8c1298 feat: Add saveAsset and readImage to loadV2Plugin
+d8916769 feat: Remove safeGlobal methods readImage and saveAsset
+99ea0bf0 chore: Rename unpargeable references to uncleanable
+ae1ad638 feat: Add parging remotes
+f484ed72 feat: Add skipRemoteSavingOnCharacters option to RisuSaveEncoder for full reload
+dae57993 feat: Add skipRemoteSaving option to EncodeBlockArg for conditional remote saving at init
+70fb635a feat: Remove unused remote property from EncodeBlockArg type
+d7055694 feat: Add remote block encoding for node and tauri
+05902e1a feat: Update button hover colors to blue for better visibility
+54715bac feat: Inlay asset explorer in Playground (#1241)
+2324b528 feat: Register `#escape` to CBS doc, add `#escape::keep` (#1245)
+b450c8aa feat: #escape::keep
+bb4e8c2c test: #escape
+43b6333b test: Add selIdState to stores.svelte mocks (#1221)
+74bb6aa8 chore: Remove all Capacitor-related codes (#1238)
+431a6dd5 Merge branch 'main' into feat/move-axmodels-to-model-settings
+7c56f9d2 chore: Remove dead settings
+c0672695 ci: Remove CodeQL for Java
+3ed3fad3 docs: Update AGENTS.md
+9cb578d1 chore: Remove all capacitor-related codes
+3df0feb3 feat: Increase page size to 36
+0e41aa41 chore: Clear redundant explicit type
+dbd1e0f5 feat: Inlay assets explorer
+7728948d chore: Remove 'vn' as well
+3fa0db99 chore: Remove unused visual novel mode
+5ddd69a5 test: Add selIdState to stores.svelte mocks
+2d97578d chore: update CSP, do not apply yet.
+71c108c8 Merge branch 'main' of https://github.com/kwaroran/Risuai
+26110866 chore: add @types/trusted-types dependency and update loadV2Plugin to use Trusted Types
+2bee850e fix: add crossorigin attribute to manifest link (#1243)
+d0752db6 refactor: Type language objects (#1239)
+f2da24d0 fix: add crossorigin attribute to manifest link
+a2d69c62 refactor: Type language objects
+bb9dd828 fix: update version to 2026.1.184 in tauri configuration and related files
+cad8824a fix: remove unnecessary version check for development environment in loadV2Plugin function
+2c1cc10c Merge branch 'main' into feat/move-axmodels-to-model-settings
+e0b49368 feat: Add checkbox for separated aux model settings location
+15d7639f fix: update version to 2026.1.183 in configuration and related files
+cb71787e fix: v2.0 should not be removed yet
+64abf3d5 fix: comment out specialType options in factory.ts
+1df7000f fix: correct import path for plugin functions in PluginSettings.svelte
+bb9d0503 fix: update version to 2026.1.182 in configuration and related files
+450a0088 fix: plugins.ts not defined as svelte file
+9465f0c9 fix: v3 not defined as svelte
+341c835d Merge branch 'main' into feat/move-axmodels-to-model-settings
+c111ed01 fix: update version to 2026.1.180 in configuration files
+cbf9aca9 fix: google backup
+1acaa32c feat: apply readImage and saveAsset security patch to v2.1 and others too.
+71966ec0 fix: enhance __debugV3Plugin to support plugin name and error handling
+9476bac2 feat: add character and chat management methods to RisuaiPluginAPI
+efbf35c9 fix: add error handling for plugin termination in unloadV3Plugin
+74c40875 fix: correct variable name in makeRisuaiAPIV3 to improve clarity
+b4e1f130 fix: update saveAsset method d.ts to return the saved asset path
+0cfeb627 feat: simplify saveAsset method by removing unused path parameter
+38ae0182 feat: update getDatabase method to include optional key filtering
+f960515b Merge branch 'main' of https://github.com/kwaroran/Risuai
+5c4f3c06 feat: enhance makeRisuaiAPIV3 to add security checks for readImage path
+eb91e011 chore: Remove unused loggen (#1224)
+adeba3ce refactor: Separate TriggerV1List, lazily load it (#1234)
+fde294e9 chore: Remove unused DB keys (#1231)
+50601f84 refactor: Playground lazyloading (#1236)
+698205e1 refactor: Lazyload playground
+74068f4c refactor: Separate TriggerV1List, lazyload it
+64a9cf1b feat: Move aux models setting to models setting page
+308a1781 chore: Remove unused DB keys
+cbc87ccf chore: Remove unused loggen
+9e02efa6 fix: resolve token count reactivity in CharConfig (#1218)
+6151bbe3 chore: Remove unused bot creator (#1220)
+9467cc8f chore: Remove unused prebuilt presets (#1226)
+bf2cd8e6 chore: Remove AI21 from LLMProvider (#1227)
+9b439ec0 chore: Remove AI21 from LLMProvider
+be63bd9c chore: Remove unused prebuilt presets
+f0b7f19c feat: enhance IconButton component with className and id props
+82ecb362 feat: add name props from Iconbutton and add missing prop rune
+a3ff34ac refactor: remove  button-icon-copy class from IconButton component
+68b4fe6c feat: add IconButton component for reusable button functionality
+21602f96 feat: add WaveSpeedAI integration for image generation
+021ac235 chore: create Message.svelte
+ff07050c chore: Remove unused bot creator
+30853066 refactor: Simplify plugin error handling and update deprecation messages
+87270658 fix: resolve token count reactivity in CharConfig
+b3ab9c20 refactor: Cache getAssetSrc/getEmoSrc results (#1204)
+3696951f feat: Enable F12 DevTools in Tauri builds (#1207)
+1eabe396 test: Add `#when` multiple operators + logical operator case (#1212)
+a8958cc8 refactor: Move chatvar functions out of `parser.svelte.ts` (#1213)
+588c1c95 chore: Remove unused NAI login function (#1214)
+1280ea0a chore: Remove unused local model functions (#1215)
+2d76b72d refactor: Import lodash functions from individual modules (#1216)
+c40a46f4 refactor: Import lodash functions from individual modules
+d28672d6 chore: Remove unused local model functions
+da4574b7 chore: Remove unused NAI login function
+b28ce500 feat: Assets cache should react to assets changing
+6c7b73e9 test: Add default chat variable handling cases
+24d8a8a4 test: Add variable get/set tests
+32c1f27e refactor: Move chatVar/globalChatVar into a new file
+71b68abd test: Move katex mock to vitest setup
+55f5f994 test: Add #when operators + and/or composite case
+18242c19 feat: add default value support to alertInput and related components
+0fbdbcee fix: Exclude account information from local backups
+4442a7e6 Merge branch 'main' into refactor/cache-assets
+389ce7ff Fix typo in README for 'Additional Assets' (#1206)
+3a93d6cd fix: update missing inlay tag in imggen inlay mode (#1209)
+ce6148fb refactor: Update pull request template for improved clarity and structure
+d6e77c15 refactor: Improve PR checklist structure and clarity
+be76a5e3 feat: Add caption/textarea toggles (#1205)
+027ef193 fix: Partial backup asset path handling in Tauri (#1202)
+83154985 chore: Update `@adobe/css-tools` to 4.4.4 (#1203)
+bab7b79d fix: update missing inlay tag in imggen inlay mode
+2561b6ad feat: Enable F12 DevTools in Tauri builds
+9b320187 Fix typo in README for 'Additional Assets'
+ad289355 fix: keyWithPrefix assign
+3f56764c feat: Add caption/textarea toggles
+100744d9 refactor: Cache getAssetSrc/getEmoSrc results
+67c0b407 chore: Update  to 4.4.4
+2650af92 fix: add assets/ prefix when isTauri
+79d7fc51 fix: also show jailbreak toggle when {{jbtoggled}} CBS is used
+0a82263d feat: hide jailbreak toggle when no jailbreak prompt exists

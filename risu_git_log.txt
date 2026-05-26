@@ -1,0 +1,18 @@
+9198f74 Revert "feat: 백그라운드 성능 개선 및 앱 이름 변경 - 라이프사이클 관리 추가 (onPause/onResume/onSaveInstanceState) - 정적 파일 캐싱 전략 개선 (JS/CSS/이미지 24시간 캐시) - 앱 이름 변경: RisuAI Dev  RisuAI"
+44b9794 feat: 백그라운드 성능 개선 및 앱 이름 변경 - 라이프사이클 관리 추가 (onPause/onResume/onSaveInstanceState) - 정적 파일 캐싱 전략 개선 (JS/CSS/이미지 24시간 캐시) - 앱 이름 변경: RisuAI Dev  RisuAI
+ebc7795 feat: Fix RPack WASM loading and file download issues
+704b611 Revert "feat: Add RPack polyfill to index.html and implement DownloadListener in MainActivity"
+f7625f8 feat: Add RPack polyfill to index.html and implement DownloadListener in MainActivity
+origin	https://time5454:rosha5540%21@lab.ssafy.com/time5454/risu.git (fetch)
+origin	https://time5454:rosha5540%21@lab.ssafy.com/time5454/risu.git (push)
+---BRANCH---
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+---STATUS---
+M  app/src/main/assets/index.html
+AM app/src/main/assets/native_storage_polyfill.js
+M  app/src/main/kotlin/co/aiclient/risu/bridge/RisuBridge.kt
+---DIFF_STAT---
+ app/src/main/assets/native_storage_polyfill.js | 251 +++++++++++++++----------
+ 1 file changed, 148 insertions(+), 103 deletions(-)
